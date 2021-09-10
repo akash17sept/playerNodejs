@@ -2,8 +2,11 @@ const mongoose = require('mongoose')
 const express = require('express')
 const app = express()
 const port= 3000
+require('dotenv').config()
+const password = process.env.ATLAS_PASSWORD
+console.log(password)
 
-const dbURI = "mongodb+srv://Akash:12345@cluster0.oogou.mongodb.net/user?retryWrites=true&w=majority"
+const dbURI = `mongodb+srv://Akash:${password}@cluster0.oogou.mongodb.net/user?retryWrites=true&w=majority`
 const options = {
     useUnifiedTopology: true,
     useNewUrlParser: true
